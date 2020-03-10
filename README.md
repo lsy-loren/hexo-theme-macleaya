@@ -6,7 +6,7 @@
 ### 安装
 
 ``` bash
-$ git clone https://github.com/lsylovelmy/hexo-theme-macleaya.git themes/macleaya
+$ git clone https://github.com/lsylovelmy/hexo-theme-macleaya.git
 ```
 
 修改根目录的_config.yml，如下：  
