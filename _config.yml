@@ -1,0 +1,30 @@
+menu:
+  - name: home
+    url: /
+    newTab: false
+  - name: resume
+    url: /resume
+    newTab: false
+  - name: mood
+    url: /mood
+    newTab: true
+  - name: amusement
+    url: /amusement/tetris
+    newTab: true
+  - name: about
+    url: /about
+    newTab: false
+
+widgets:
+  - user-info
+  - latest
+  - category
+  - archive
+  - label
+
+favicon: /images/favicon.ico
+
+#UserInfo
+avatar: /images/avatar.jpg
+author: 博落回
+slogan: 流连矣 忘景幻云催 峦栈醺醺说旧梦 重山迟迟映霞辉 向晚共邀归 —— 忆江南

@@ -1,0 +1,6 @@
+<% if (site.posts.length){ %>
+  <div class="box widget">
+    <div class="title"><%= __('archive') %></div>
+    <%- custom_list_archives({show_count: true, format: 'YYYY-MM'}) %>
+  </div>
+<% } %>

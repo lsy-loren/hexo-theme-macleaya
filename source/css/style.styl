@@ -1,0 +1,177 @@
+@import "_partial/variable.styl";
+
+body, ul {
+  margin 0;
+  padding 0;
+};
+
+body {
+  font-size 14px;
+  font-family "Microsoft YaHei";
+};
+
+ul {
+  list-style-type none;
+};
+
+.global-width {
+  width 80%;
+  margin 0 auto;
+};
+
+a {
+  text-decoration: none;
+  color: $aColor;
+
+  &:hover {
+    color $hoverColor;
+  }
+};
+
+.box {
+  position relative;
+  padding 20px;
+  border 1px solid $borderColor;
+  border-radius 3px;
+  box-shadow 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+};
+
+.dotted {
+  color: $borderColor;
+  margin: 0 5px;
+  font-size: 12px;
+};
+
+.main-container {
+  height 100%
+  position relative
+};
+
+.main {
+  .post-item:not(:first-child) {
+    margin-top 20px;
+  }
+}
+
+$mainWidth = 75%;
+
+.content {
+  margin-top 20px;
+  display flex;
+  position relative;
+  justify-content space-between;
+
+  .main {
+    width $mainWidth;
+  }
+
+  .aside {
+    width "calc(100% - %s - 20px)" % $mainWidth;
+  }
+};
+
+.cloud-label {
+  a {
+    padding 5px 8px;
+    border-radius 4px;
+    border 1px solid $borderColor;
+    box-sizing border-box;
+    margin-right 5px;
+    margin-bottom 5px;
+    display inline-block;
+
+    &:hover {
+      color $labelFontColor;
+      background-color $labelBackgroundColor;
+    }
+  }
+};
+
+.page-nav {
+  margin-top: 20px;
+  text-align center;
+
+  a, span {
+    margin 0 4px;
+    padding 4px 14px;
+    display inline-block;
+    border 1px solid $borderColor;
+  }
+
+  span {
+    color $labelFontColor;
+    background-color $labelBackgroundColor;
+  }
+
+  a:hover {
+    color $labelFontColor;
+    background-color $labelBackgroundColor;
+  }
+};
+
+code {
+  font-family: "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace, "Microsoft YaHei";
+}
+
+.hljs {
+  padding: 15px;
+  font-family: "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace, "Microsoft YaHei";
+};
+
+@import "_partial/header.styl";
+@import "_partial/aside.styl";
+@import "_partial/article.styl";
+@import "_partial/footer.styl";
+
+
+@media only screen and (max-width: 1400px) {
+  .global-width {
+    width 96%;
+  }
+};
+
+@media only screen and (max-width: 1200px) {
+  .nav-box {
+    display flex;
+    justify-content center;
+  }
+
+  .global-width {
+    width auto;
+  }
+
+  .content {
+    display block;
+    margin-top 10px;
+
+    .main, .aside {
+      width 100%;
+    }
+
+    .aside {
+      margin-top 10px;
+    }
+  }
+
+  .main {
+    .post-item:not(:first-child) {
+      margin-top 10px;
+    }
+  }
+
+  .page-nav {
+    margin-top: 10px;
+  }
+
+  .aside {
+    .widget {
+      &:not(:first-child) {
+        margin-top 10px;
+      }
+    }
+  }
+
+  .footer {
+    margin-top: 10px;
+  }
+};

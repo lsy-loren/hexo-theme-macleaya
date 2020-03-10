@@ -1,0 +1,35 @@
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+
+<% if(page.author) { %>
+    <meta name="author" content="<%= page.author %>">
+<% } %>
+
+<% if(page.keywords){ %>
+    <meta name="keywords" content="<%= page.keywords %>"/>
+<% } else if(page.tags && page.tags.length) { %>
+    <meta name="keywords" content="<% page.tags.forEach(function (item) { %><%- item.name %>,<% }) %>"/>
+<% } else{ %>
+    <meta name="keywords" content="<%= config.keywords %>"/>
+<% } %>
+
+<% if(page.content){ %>
+    <meta name="description" content="<%- truncate(strip_html(page.content), {length: 150, omission: '...'}) %>"/>
+<% } else{ %>
+    <meta name="description" content="<%= config.description %>"/>
+<% } %>
+
+<meta name="Robots" content="all">
+
+<% if(page.title) { %>
+    <title><%= config.title %> | <%= page.title %></title>
+<% } else { %>
+    <title><%= config.title %></title>
+<% } %>
+
+<link rel="icon" href="<%- theme.favicon %>">
+<%- css('css/font-awesome.min.css') %>
+<%- css('css/atom-one-dark.css') %>
+<%- css('css/style.css') %>
+<%- js('js/highlight.min.js') %>

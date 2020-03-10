@@ -1,0 +1,82 @@
+@import "variable.styl";
+
+.post {
+  .post-title {
+    font-size 22px;
+    font-weight 700;
+
+    a {
+      color: $titleColor;
+
+      &:hover {
+        color $hoverColor;
+      }
+    }
+  }
+
+  .post-meta {
+    margin-top 15px;
+  }
+
+  .post-excerpt {
+    margin-top 15px;
+    word-break break-all;
+
+    a {
+      color $aColor;
+
+      p {
+        margin 0;
+        line-height 25px;
+      }
+    }
+  }
+
+  .post-content {
+    margin-top 20px;
+    word-break break-all;
+
+    a {
+      color #0e6db1;
+      text-decoration underline;
+    }
+  }
+
+  .post-excerpt, .post-content {
+    table {
+      border-collapse collapse;
+      margin 1rem 0;
+      display block;
+      overflow-x auto;
+
+      td, th {
+        border 1px solid $borderColor;
+        padding .6em 1em;
+      }
+    }
+  }
+
+  .post-footer {
+    margin-top 15px;
+    padding-top 15px;
+    border-top 1px dotted $borderColor;
+  }
+
+  .align-center {
+    text-align center;
+  }
+
+  .detail-title {
+    font-size 24px;
+  }
+};
+
+.label {
+  padding: 1px 2px;
+  color: $labelFontColor;
+  background-color $labelBackgroundColor;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: .25em;
+};

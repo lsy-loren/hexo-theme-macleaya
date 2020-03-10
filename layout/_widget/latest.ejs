@@ -1,0 +1,12 @@
+<% if (site.posts.length){ %>
+<div class="box widget">
+    <div class="title"><%= __('latest') %></div>
+    <ul class="item-box">
+        <% site.posts.sort('date', -1).limit(8).each(function(post){ %>
+            <% if(!post.hide) {%>
+                <li><a href="<%- url_for(post.path) %>"><%= post.title || '(no title)' %></a></li>
+            <% } %>
+        <% }) %>
+    </ul>
+</div>
+<% } %>

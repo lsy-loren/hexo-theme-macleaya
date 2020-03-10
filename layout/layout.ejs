@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- partial('_partial/head') %>
+</head>
+<body>
+    <div class="main-container">
+        <%- partial('_partial/header') %>
+        <section class="content global-width">
+            <div class="main">
+                <%- body %>
+            </div>
+            <%- partial('_partial/aside') %>
+        </section>
+        <%- partial('_partial/footer') %>
+    </div>
+
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+</body>
+</html>

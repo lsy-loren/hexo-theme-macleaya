@@ -1,0 +1,55 @@
+<% page.posts.each(function(page){ %>
+    <% if(!page.hide) { %>
+        <article class="box post post-item">
+            <div class="post-title"><a href="<%- url_for(page.path) %>"><%= page.title %></a></div>
+            <div class="post-meta">
+                <% if(page.type) { %>
+                    <span class="label"><%= page.type %></span>
+                    <span class="dotted">|</span>
+                <% } %>
+                <i class="fa fa-calendar"></i> <time><%= date(page.date) %></time>
+                <span class="dotted">|</span>
+                <i class="fa fa-user"></i> <%= page.author %>
+            </div>
+
+            <div class="post-excerpt">
+                <a href="<%- url_for(page.path) %>">
+                    <p>
+                        <% if (page.excerpt){ %>
+                            <%- strip_html(page.excerpt) %>
+                        <% } else {%>
+                            <%- strip_html(page.content) %>
+                        <% } %>
+                    </p>
+                </a>
+            </div>
+
+            <% if ((page.categories && page.categories.length) || (page.tags && page.tags.length)){ %>
+                <div class="post-footer">
+                    <% if (page.categories && page.categories.length){ %>
+                        <i class="fa fa-folder-open-o"></i>
+                        <%- list_categories(page.categories, {style: 'none', show_count: false}) %>
+
+                        <% if (page.tags && page.tags.length){ %>
+                            <span class="dotted">|</span>
+                        <% } %>
+
+                    <% } %>
+                    <% if (page.tags && page.tags.length){ %>
+                        <i class="fa fa-tags"></i>
+                        <%- list_tags(page.tags, {style: 'none', show_count: false}) %>
+                    <% } %>
+                </div>
+            <% } %>
+        </article>
+    <% } %>
+<% }) %>
+
+<% if (page.total > 1){ %>
+    <nav class="page-nav">
+        <%- paginator({
+            prev_text: __('prev'),
+            next_text: __('next')
+        }) %>
+    </nav>
+<% } %>

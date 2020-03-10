@@ -1,0 +1,57 @@
+@import "variable.styl";
+
+.aside {
+  .widget {
+
+    &:not(:first-child) {
+      margin-top 20px;
+    }
+
+    .introduction {
+      display flex;
+      justify-content: space-between;
+      align-items: center;
+
+      img {
+        width 100px;
+        height 100px;
+        border 1px solid $borderColor;
+        border-radius 100%;
+      }
+
+      .name {
+        writing-mode: tb-rl;
+        -webkit-writing-mode: vertical-rl;
+      }
+
+      .slogan {
+        max-height 200px;
+        writing-mode: tb-rl;
+        -webkit-writing-mode: vertical-rl;
+      }
+    }
+
+    .title {
+      font-size 22px;
+      font-weight bold;
+    }
+
+    .item-box, .category-list, .archive-list {
+      margin-top 10px;
+
+      li {
+        padding 6px 0;
+      }
+    }
+  }
+}
+
+.category-list-count, .archive-list-count {
+  &:before {
+    content "（";
+  }
+
+  &:after {
+    content "）";
+  }
+};

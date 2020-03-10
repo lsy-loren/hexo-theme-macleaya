@@ -1,0 +1,32 @@
+<article class="box post">
+    <div class="post-title align-center detail-title"><%= page.title %></div>
+    <div class="post-meta align-center">
+        <% if(page.type) { %>
+            <span class="label"><%= page.type %></span>
+            <span class="dotted">|</span>
+        <% } %>
+        <i class="fa fa-calendar"></i> <time><%= date(page.date) %></time>
+        <span class="dotted">|</span>
+        <i class="fa fa-user"></i> <%= page.author %>
+        <% if ((page.categories && page.categories.length) || (page.tags && page.tags.length)){ %>
+            <% if (page.categories && page.categories.length){ %>
+                <span class="dotted">|</span>
+                <i class="fa fa-folder-open-o"></i>
+                <%- list_categories(page.categories, {style: 'none', show_count: false}) %>
+
+                <% if (page.tags && page.tags.length){ %>
+                    <span class="dotted">|</span>
+                <% } %>
+
+            <% } %>
+            <% if (page.tags && page.tags.length){ %>
+                <i class="fa fa-tags"></i>
+                <%- list_tags(page.tags, {style: 'none', show_count: false}) %>
+            <% } %>
+        <% } %>
+    </div>
+
+    <div class="post-content">
+        <%- page.content %>
+    </div>
+</article>
